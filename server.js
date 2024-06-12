@@ -5,10 +5,14 @@ const morgan = require('morgan')
 const cors = require('cors')
 const bodyParse = require('body-parser')
 
+const connectDB = require('./Config/db')
+
 const productRouters = require('./Routes/product')
 const authRouters = require('./Routes/auth')
 
 const app = express()
+
+connectDB()
 
 app.use(morgan('dev'))
 app.use(cors())

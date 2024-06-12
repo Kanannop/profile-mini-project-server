@@ -1,11 +1,25 @@
+const Product = require('../Models/Product')
+
 exports.read = async(req,res)=>{
-    res.send('Hello Controller Read')
+    try{
+        //code
+        const id = req.params.id
+
+        const producted = await Product.find({_id:id}).exec();
+        res.send(producted)
+    }catch(err){
+        //error
+        console.log(err)
+        res.status(500).send('Server Error')
+    }
 }
 
 exports.list = async(req,res)=>{
     try{
         //code
-        res.send('Hello List')
+        const producted = await Product.find({}).exec();
+
+        res.send(producted)
     }catch(err){
         //error
         console.log(err)
@@ -16,7 +30,9 @@ exports.list = async(req,res)=>{
 exports.create = async(req,res)=>{
     try{
         //code
-        res.send('Hello Create')
+        console.log(req.body)
+        const producted = await Product(req.body).save()
+        res.send(producted)
     }catch(err){
         //error
         console.log(err)
@@ -27,7 +43,9 @@ exports.create = async(req,res)=>{
 exports.update = async(req,res)=>{
     try{
         //code
-        res.send('Hello Update')
+        const id = req.params.id
+        const updated = await Product.findOneAndUpdate({_id:id},req.body,{new:true}).exec()
+        res.send(updated)
     }catch(err){
         //error
         console.log(err)
@@ -38,7 +56,9 @@ exports.update = async(req,res)=>{
 exports.remove = async(req,res)=>{
     try{
         //code
-        res.send('Hello Delete')
+        const id = req.params.id
+        const removed = await Product.findOneAndDelete({_id:id}).exec()
+        res.send(removed)
     }catch(err){
         //error
         console.log(err)
