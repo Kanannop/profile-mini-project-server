@@ -1,1 +1,55 @@
 backend
+
+{
+  "information": {
+    "userImage": "path/to/image.jpg",
+    "userCoverBanner": "path/to/banner.jpg",
+    "username": "johndoe",
+    "nickname": "Johnny",
+    "firstname": "John",
+    "lastname": "Doe",
+    "positionOption": "Manager",
+    "nationality": "American",
+    "telephoneNumber": "123-456-7890",
+    "startingDate": "2021-01-01T00:00:00.000Z"
+  },
+  "contact": {
+    "address": "123 Main St",
+    "subdistrict": "Subdistrict",
+    "district": "District",
+    "province": "Province",
+    "postal": "12345",
+    "facebook": "john.doe",
+    "lineId": "johnny123",
+    "instagram": "johnny_insta"
+  },
+  "education": [
+    {
+      "year": "2017",
+      "university": "ABC University"
+    }
+  ],
+  "experience": [
+    {
+      "year": "2017",
+      "company": "BDF",
+      "position": "Frontend"
+    }
+  ],
+  "skill": [
+    {
+      "skill": "Python",
+      "rate": 8
+    }
+  ],
+  "interest": [
+    {
+      "interest": "GIO"
+    }
+  ],
+  "guild": [
+    {
+      "guild": "T-POP"
+    }
+  ]
+}
